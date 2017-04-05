@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
   end
 
-  def creator
+  def create
     creator = Creator.new
     creator.printer = params[:printer]
     creator.printer_model = params[:printer_model]
