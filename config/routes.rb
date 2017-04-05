@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :cad
+  resources :cads
 
   namespace :api do
     resources :jobs
-    resources :cad
+    resources :cads
   end
 
   get '/users/new', to: 'users#new'

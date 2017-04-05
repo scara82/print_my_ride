@@ -1,10 +1,7 @@
-class Api::CadController < ApplicationController
+class Api::CadsController < ApplicationController
 
   def index
-    render json: Cads.all
+    render json: Cad.all
   end
-
-
-
 
 end
