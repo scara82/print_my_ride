@@ -45,4 +45,9 @@ class Api::JobsController < ApplicationController
       render json: job.errors
     end
   end
+
+  def accept
+    job = Job.find_by(id: params[:id])
+    job.accept = params[:accept]
+    if job.accept === true 
 end
