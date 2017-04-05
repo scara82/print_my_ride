@@ -1,0 +1,2 @@
+class CreatorMaterial < ApplicationRecord
+end
