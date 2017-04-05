@@ -1,6 +1,5 @@
-class Api::JobsController < ApplicationController
 
-  def index
+class Api::JobsController < ApplicationController
 
   def index
     render json: Jobs.all
@@ -20,6 +19,7 @@ class Api::JobsController < ApplicationController
   end
 
   def create
+
     job = Job.new
     job.name = params[:name]
     job.image_url = params[:image_url]
@@ -27,10 +27,12 @@ class Api::JobsController < ApplicationController
       render json: job
     else
       render json: job.errors
+
     end
   end
 
   def edit
+
     job = Job.find_by(id:params[:id])
       render json: job
   end
@@ -43,6 +45,7 @@ class Api::JobsController < ApplicationController
       render json: job
     else
       render json: job.errors
+
     end
   end
 
