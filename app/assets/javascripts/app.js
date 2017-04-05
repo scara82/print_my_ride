@@ -1,69 +1,69 @@
 $(document).ready(function() {
 
-  $('.new-card-form').on('submit', function(event){
+  $('.new-job-form').on('submit', function(event){
     event.preventDefault();
-    console.log('create new card');
+    console.log('create new job');
     $.ajax({
-      url: '/api/cards',
+      url: '/api/jobs',
       method: 'post',
       data: {
-            name: $('.new-card-name').val(),
-            image_url: $('.new-card-image').val()
+            name: $('.new-job-name').val(),
+            image_url: $('.new-job-image').val()
           }
-    }).done(function(card){
-      var source = $( '#card-template' ).html();//grab the tenplate string
+    }).done(function(job){
+      var source = $( '#job-template' ).html();//grab the tenplate string
       var template = Handlebars.compile(source); //turns template string into a function
-      var html = template( card );
+      var html = template( job );
       $('.wrapper').append(html)
     })
   });
 
   $.ajax({
-    url: '/api/cards'
+    url: '/api/jobs'
   }).done(function(res) {
-    res.forEach(function(card){
-      var source = $( '#card-template' ).html();//grab the tenplate string
+    res.forEach(function(job){
+      var source = $( '#job-template' ).html();//grab the tenplate string
       var template = Handlebars.compile(source); //turns template string into a function
-      var html = template( card );
+      var html = template( job );
       $('.wrapper').append(html);
     })
   });//close-ajax
 
   $('.wrapper').on('click', '.delete-action', function(event) {
-    var id = $(event.target).closest('.card').data('id');
+    var id = $(event.target).closest('.job').data('id');
     $.ajax({
-      url: '/api/cards/' + id,
+      url: '/api/jobs/' + id,
       method: 'delete'
     }).done(function() {
-      $(event.target).closest('.card').remove();
+      $(event.target).closest('.job').remove();
     });
   });//delete-action
 
 
   $('.wrapper').on('click', '.edit-action', function(event) {
-    var id = $(event.target).closest('.card').data('id');
+    var id = $(event.target).closest('.job').data('id');
     event.preventDefault();
     $.ajax({
-      url: 'api/cards/' + id + '/edit',
+      url: 'api/jobs/' + id + '/edit',
       method: 'get'
-    }).done(function(card){
-      var source = $( '#card-edit-template' ).html();//grab the tenplate string
+    }).done(function(job){
+      var source = $( '#job-edit-template' ).html();//grab the tenplate string
       var template = Handlebars.compile(source); //turns template string into a function
-      var html = template( card );
-      $(event.target).closest('.card').append(html);
-      $('.edit-card-form').on('submit', function(event){
+      var html = template( job );
+      $(event.target).closest('.job').append(html);
+      $('.edit-job-form').on('submit', function(event){
         $.ajax({
-          url: '/api/cards/' + id,
+          url: '/api/jobs/' + id,
           method: 'put',
           data: {
-            name: $('.edit-card-name').val(),
-            image_url: $('.edit-card-image').val()
+            name: $('.edit-job-name').val(),
+            image_url: $('.edit-job-image').val()
           }
-        }).done(function(card) {
-          var source = $( '#card-template' ).html();//grab the tenplate string
+        }).done(function(job) {
+          var source = $( '#job-template' ).html();//grab the tenplate string
           var template = Handlebars.compile(source); //turns template string into a function
-          var html = template( card );
-          $(event.target).closest('.card').remove();
+          var html = template( job );
+          $(event.target).closest('.job').remove();
         });
       });//edit-action
     })
