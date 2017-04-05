@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function() {
 
   $('.new-card-form').on('submit', function(event){
     event.preventDefault();
