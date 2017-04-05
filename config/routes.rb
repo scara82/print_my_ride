@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get '/users/new', to: 'users#new'
+  post '/users', to: 'users#create'
+  delete '/users', to: 'users#destroy'
+
+  get '/users/user_type', to: 'users#user_type_new'
+  post '/users', to: 'users#creator'
 
   resources :cad
 
@@ -6,10 +12,4 @@ Rails.application.routes.draw do
     resources :jobs
     resources :cad
   end
-
-  get '/users/new', to: 'users#new'
-  post '/users', to: 'userss#create'
-  delete '/users', to: 'users#destroy'
-
-
 end
