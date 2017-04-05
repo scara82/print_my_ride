@@ -47,7 +47,7 @@
         </div>
         <% end %>
 
-      
+      <% if user_logged_in? === false %>
         <div id="navbar">
           <nav id="nav-bar">
             <a class="nav_box" href="/"><h1>Print My Ride</h1></a>
@@ -57,7 +57,7 @@
             <a class="nav_box" href="/#">Log In</a>
           </nav>
         </div>
-
+      <%end%>
     </header>
 
     <%= yield %>
