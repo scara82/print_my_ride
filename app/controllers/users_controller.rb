@@ -1,5 +1,5 @@
-class UserController < ApplicationController
-has_secure_password
+class UsersController < ApplicationController
+
 
   def new
   end
@@ -7,7 +7,8 @@ has_secure_password
   def create
     user = User.new
     user.name = params[:name]
-    user.lastname = params[:lastname]
+    user.last_name = params[:last_name]
+    user.password = params[:password]
 
     if user.save
       redirect_to '/'
