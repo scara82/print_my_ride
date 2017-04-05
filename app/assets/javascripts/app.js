@@ -1,15 +1,5 @@
 $(document).ready(function() {
 
-  $('#logIn').on('submit', function(event)( {
-    event.preventDefault();
-    var id = user
-    $.ajax({
-      url: '/api/creator',
-      method: 'get'
-    })
-
-  })
-
   $('.new-card-form').on('submit', function(event){
     event.preventDefault();
     console.log('create new card');

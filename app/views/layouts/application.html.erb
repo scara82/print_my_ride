@@ -12,20 +12,53 @@
 
   <body>
     <header>
+      <% if buyer_logged_in? %>
       <div id="navbar">
-            <nav id="nav-bar">
-                <a class="nav_box" href="/"><h1>Print My Ride</h1></a>
-                <label>Search</label>
-                <input type="text" name="search">
-                <a class="nav_box" href="/create_job">Create Job</a>
-                <a class="nav_box" href="/session/new">Log In</a>
-            </nav>
-          </div>
+          <nav id="nav-bar">
+            <a class="nav_box" href="/"><h1 id='logo'>Print My Ride</h1></a>
+            <label>Search</label>
+            <input type="text" name="search">
+            <a class="nav_box" href="/create_job">Create Job</a>
+              <nav class="internal_nav_bar">
+                <a class="nav_box_buyer" href="/#">Dash</a>
+                <a class="nav_box_buyer" href="/#">Offers</a>
+                <a class="nav_box_buyer" href="/#">Past Jobs</a>
+              </nav>
+            <a class="nav_box" href="/#/:id">Profile</a>
+          </nav>
+        </div>
+      <%end%>
+
+
+      <%if creator_logged_in? %>
+        <div id="navbar">
+          <nav id="nav-bar">
+            <a class="nav_box" href="/"><h1>Print My Ride</h1></a>
+            <label>Search</label>
+            <input type="text" name="search">
+            <a class="nav_box" href="/#">Create Job</a>
+              <nav class="internal_nav_bar">
+                <a class="nav_box_creator" href="/#">Dash</a>
+                <a class="nav_box_creator" href="/#">Jobs</a>
+                <a class="nav_box_creator" href="/#">Designs</a>
+              </nav>
+            <a class="nav_box" href="/#/:id">Profile</a>
+          </nav>
+        </div>
+        <% end %>
+
+      
+        <div id="navbar">
+          <nav id="nav-bar">
+            <a class="nav_box" href="/"><h1>Print My Ride</h1></a>
+            <label>Search</label>
+            <input type="text" name="search">
+            <a class="nav_box" href="/#">Create Job</a>
+            <a class="nav_box" href="/#">Log In</a>
+          </nav>
+        </div>
+
     </header>
-
-
-
-
 
     <%= yield %>
   </body>

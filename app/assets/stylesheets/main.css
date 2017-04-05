@@ -1,5 +1,8 @@
-#navbar {
+@import url('https://fonts.googleapis.com/css?family=Audiowide|Raleway');
 
+#navbar {
+  width: 100%;
+  height: inherit;
 }
 
 #nav-bar {
@@ -8,4 +11,9 @@
 
 .nav_box {
 
+}
+
+#logo {
+  font-family: Audiowide, cursive;
+  font-size: 52pt;
 }

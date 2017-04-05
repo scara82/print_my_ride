@@ -1,6 +1,8 @@
 class Api::CardsController < ApplicationController
 
   def index
+
+  def index
     render json: Card.all
   end
 
