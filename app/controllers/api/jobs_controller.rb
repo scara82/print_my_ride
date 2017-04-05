@@ -1,48 +1,51 @@
-class Api::CardsController < ApplicationController
+
+class Api::JobsController < ApplicationController
 
   def index
-
-  def index
-    render json: Card.all
+    render json: Jobs.all
   end
 
   def profile
-    render json: Card.find(paramas[:id])
+    render json: Job.find(paramas[:id])
   end
 
   def destroy
-    card = Card.find(params[:id])
-    if card.destroy
-      render json: card
+    job = Job.find(params[:id])
+    if job.destroy
+      render json: job
     else
-    render json: card.errors
+    render json: job.errors
     end
   end
 
   def create
-    card = Card.new
-    card.name = params[:name]
-    card.image_url = params[:image_url]
-    if card.save
-      render json: card
+
+    job = Job.new
+    job.name = params[:name]
+    job.image_url = params[:image_url]
+    if job.save
+      render json: job
     else
-      render json: card.errors
+      render json: job.errors
+
     end
   end
 
   def edit
-    card = Card.find_by(id:params[:id])
-      render json: card
+
+    job = Job.find_by(id:params[:id])
+      render json: job
   end
 
   def update
-    card = Card.find_by(id:params[:id])
-    card.name = params[:name]
-    card.image_url = params[:image_url]
-    if card.save
-      render json: card
+    job = Job.find_by(id:params[:id])
+    job.name = params[:name]
+    job.image_url = params[:image_url]
+    if job.save
+      render json: job
     else
-      render json: card.errors
+      render json: job.errors
+
     end
   end
 end

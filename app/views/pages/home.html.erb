@@ -1,8 +1,8 @@
 <div class="wrapper">
 
 
-<script id="card-template" type="text/x-handlebars-template">
-  <div class="card" data-id= {{id}} >
+<script id="job-template" type="text/x-handlebars-template">
+  <div class="job" data-id= {{id}} >
     <header class="content">
       {{name}}
     </header>
@@ -13,44 +13,42 @@
       <div><span class="delete-action">Delete</span></div>
       <div><span class="edit-action">Edit</span></div>
     </footer>
+    <div>
+      <ul>
+        <!-- insert script for bids -->
+      </ul>
+    </div>
   </div>
 </script>
 
 
-<script id="card-edit-template" type="text/x-handlebars-template">
-  <div class="card" data-id= {{id}} >
+<script id="job-edit-template" type="text/x-handlebars-template">
+  <div class="job" data-id= {{id}} >
     <header class="content">
       {{name}}
     </header>
     <footer class="content">
-      <form class='edit-card-form'>
+      <form class='edit-job-form'>
         <label>name</label>
-        <input type="text" class="edit-card-name" value="{{name}}">
+        <input type="text" class="edit-job-name" value="{{name}}">
         <label>surname</label>
-        <input type="text" class="edit-card-surname" value="{{name}}">
+        <input type="text" class="edit-job-surname" value="{{name}}">
         <label>image url</label>
-        <input type="text" class="edit-card-image" value="{{image_url}}">
-        <button class="edit-card-button">Edit Card</button>
+        <input type="text" class="edit-job-image" value="{{image_url}}">
+        <button class="edit-job-button">Edit Job</button>
       </form>
     </footer>
   </div>
 </script>
 
-<div class="card">
-  <form class='new-card-form'>
+<div class="job">
+  <form class='new-job-form'>
     <label>name</label>
-    <input type="text" class="new-card-name">
+    <input type="text" class="new-job-name">
     <label>image url</label>
-    <input type="text" class="new-card-image">
-    <button class="new-card-action">Create Card</button>
+    <input type="text" class="new-job-image">
+    <button class="new-job-action">Create Job</button>
   </form>
 </div>
 
   </div>
-
-  <!-- <div class="barbie">
-    <div class="chicken">chicken</div>
-    <div class="pineapple">pineapple</div>
-    <div class="tomato">tomato</div>
-  </div>
-</div> -->
