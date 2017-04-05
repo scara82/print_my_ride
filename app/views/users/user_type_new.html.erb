@@ -1,0 +1,24 @@
+<form action="/users" method="post">
+
+  <input type="hidden", name='authenticity_token' value="<%= form_authenticity_token %>">
+  <label for="">Do you have a printer?</label>
+  <input type="boolean" name="printer">
+
+  <label for="">Printer Model</label>
+  <input type="text" name="printer_model"></input>
+
+  <label for="">location</label>
+  <input type="text" name="location"></input>
+
+  <label for="">Are you a designer?</label>
+  <input type="boolean" name="designer"></input>
+
+  <label for="">Payment details</label>
+  <input type="text" name="payment_details"></input>
+
+  <label for="">Designer description</label>
+  <input type="text" name="description"></input>
+
+  <button>Create User</button>
+
+</form>
