@@ -1,18 +1,31 @@
-<form action="/users" method="post">
+<div class='container'>
 
-  <input type="hidden", name='authenticity_token' value="<%= form_authenticity_token %>">
-  <label for="">name</label>
-  <input type="text" name="name">
+  <form action="/users" method="post">
 
-  <label for="">lastname</label>
-  <input type="text" name="last_name"></input>
+    <div class="item">
+      <input type="hidden", name='authenticity_token' value="<%= form_authenticity_token %>">
+      <label for="">name</label>
+      <input type="text" name="name">
+    </div>
 
-  <label for="">email</label>
-  <input type="text" name="email"></input>
+    <div class="item">
+      <label for="">lastname</label>
+      <input type="text" name="last_name"></input>
+    </div>
 
-  <label for="">choose a password</label>
-  <input type="password" name="password_digest"></input>
+    <div class="item">
+      <label for="">email</label>
+      <input type="text" name="email"></input>
+    </div>
 
-  <button>Create User</button>
+    <div class="item">
+      <label for="">choose a password</label>
+      <input type="password" name="password_digest"></input>
+    </div>
 
-</form>
+    <div class="item">
+      <button>Create User</button>
+    </div>
+
+  </form>
+</div>

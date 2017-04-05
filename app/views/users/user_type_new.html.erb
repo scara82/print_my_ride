@@ -1,24 +1,42 @@
-<form action="/users" method="post">
+<div class="container">
+  <form action="/users" method="post">
 
-  <input type="hidden", name='authenticity_token' value="<%= form_authenticity_token %>">
-  <label for="">Do you have a printer?</label>
-  <input type="boolean" name="printer">
+    <div class="item">
+      <input type="hidden", name='authenticity_token' value="<%= form_authenticity_token %>">
+      <label for="">Do you have a printer?</label>
+      <input type="boolean" name="printer">
+    </div>
 
-  <label for="">Printer Model</label>
-  <input type="text" name="printer_model"></input>
+    <div class="item">
+      <label for="">Printer Model</label>
+      <input type="text" name="printer_model"></input>
+    </div>
 
-  <label for="">location</label>
-  <input type="text" name="location"></input>
+    <div class="item">
+      <label for="">Location</label>
+      <input type="text" name="location"></input>
+    </div>
 
-  <label for="">Are you a designer?</label>
-  <input type="boolean" name="designer"></input>
+  <br>
 
-  <label for="">Payment details</label>
-  <input type="text" name="payment_details"></input>
+    <div class="item">
+      <label for="">Are you a designer?</label>
+      <input type="boolean" name="designer"></input>
+    </div>
 
-  <label for="">Designer description</label>
-  <input type="text" name="description"></input>
+    <div class="item">
+      <label for="">Payment details</label>
+      <input type="text" name="payment_details"></input>
+    </div>
 
-  <button>Create User</button>
+    <div class="item">
+      <label for="">Designer description</label>
+      <input type="textarea" name="description"></input>
+    </div>
 
-</form>
+    <div class="item">
+      <button>Submit</button>
+    </div>
+
+  </form>
+</div>

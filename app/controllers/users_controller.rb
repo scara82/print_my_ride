@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     if creator.save
       render :new
     else
-      render :new
+      render :create
     end
   end
 
