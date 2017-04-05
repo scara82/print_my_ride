@@ -17,7 +17,7 @@ has_secure_password
   end
 
   def destroy
-    user = User.find(params[:dish_id])
+    user = User.find(params[:user_id])
     if user.destroy
       redirect_to '/'
     else
