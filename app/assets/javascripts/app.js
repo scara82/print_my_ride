@@ -8,7 +8,8 @@ $(document).ready(function() {
       method: 'post',
       data: {
             name: $('.new-job-name').val(),
-            image_url: $('.new-job-image').val()
+            image_url: $('.new-job-image').val(),
+            creator_id: $(session.id)
           }
     }).done(function(job){
       var source = $( '#job-template' ).html();//grab the tenplate string
