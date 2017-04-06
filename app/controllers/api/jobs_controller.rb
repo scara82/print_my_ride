@@ -1,6 +1,9 @@
 
 class Api::JobsController < ApplicationController
 
+  def index
+  end
+
   def profile
     render json: Job.find(paramas[:id])
   end

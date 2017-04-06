@@ -8,11 +8,11 @@ $(document).ready(function() {
       url: '/api/jobs',
       method: 'post',
       data: {
-            description: $('.new-job-description').val(),
-            image_url: $('.new-job-image').val(),
-            material: $('.new-job-material').val(),
-            creator_id: $(session.id)
-          }
+        description: $('.new-job-description').val(),
+        image_url: $('.new-job-image').val(),
+        material: $('.new-job-material').val(),
+        creator_id: $(session.id)
+      }
     }).done(function(job){
       var source = $( '#job-template' ).html();//grab the tenplate string
       var template = Handlebars.compile(source); //turns template string into a function
@@ -70,12 +70,14 @@ $(document).ready(function() {
           $(event.target).closest('.job').remove();
         });
       });//edit-action
+    });
+  });
 
   $('.wrapper').on('click', '.new-bid-action', function(event) {
     var id = $(event.target).closest('.job').data('id');
     event.preventDefault();
     $.ajax({
-      url: 'api/jobs/' + id + '/edit',
+      url: '/api/jobs/' + id + '/edit',
       method: 'get'
     }).done(function(job){
       var source = $( '#creator-job-template').html();//grab the tenplate string
@@ -96,8 +98,6 @@ $(document).ready(function() {
           $(event.target).closest('.job').remove(); //append to <ul> attached to job
         });
       });//edit-action
-    })
+    });
   });
-
-
 });
