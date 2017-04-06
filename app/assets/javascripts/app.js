@@ -1,8 +1,6 @@
 $(document).ready(function() {
 
 
-  // session_id = session.id --to add check against
-
   $('.new-job-form').on('submit', function(event){
     event.preventDefault();
     console.log('create new job');
@@ -86,7 +84,7 @@ $(document).ready(function() {
       $(event.target).closest('.job').append(html);
       $('.accept-job-form').on('submit', function(event){
         $.ajax({
-          url: '/api/jobs/' + id,
+          url: '/api/bids/' + id,
           method: 'put',
           data: {
             bid: $('.job-bid').val(),
