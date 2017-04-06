@@ -12,16 +12,19 @@
   <body>
     <header>
       <div class="logo">
-
+        <h1>print my ride</h1>
       </div>
       <div class="search">
-
+        <%= form_tag("/cads?search=#{params[:search_term]}", method: :get) do %>
+          <input type="text" name="search_term" placeholder="search">
+          <button>search</button>
+        <% end %>
       </div>
       <div class="new-job">
-
+        <a href="/job/new">create a new job?</a>
       </div>
       <% if !logged_in? %>
-        <%= form_tag('/session', method: :post) do %>
+        <%= form_tag('/session/new', method: :get) do %>
           <div class="sign-in">
             <label>email</label>
             <input type="text" name="email">
@@ -33,8 +36,9 @@
       <% end %>
       <% if logged_in? %>
         <div class="login-status">
-          logged in as 
+          logged in as <%= User.find(session[:user_id]).email %>
         </div>
+        <a href="/session/destroy">logout</a>
       <% end %>
 
 
