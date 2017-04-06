@@ -3,8 +3,6 @@ $(document).ready(function() {
 
   $('.new-job-form').on('submit', function(event){
     event.preventDefault();
-    console.log('create new job');
-    // debugger
     $.ajax({
       url: '/api/jobs',
       method: 'post',
