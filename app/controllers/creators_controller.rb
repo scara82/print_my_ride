@@ -4,6 +4,10 @@ class CreatorsController < ApplicationController
     render :user_type_new
   end
 
+  def user_type
+    render :user_type
+  end
+
   def create
     creator = Creator.new
     creator.printer = params[:printer]
@@ -20,7 +24,7 @@ class CreatorsController < ApplicationController
     end
   end
 
-  def home  
+  def home
   end
 
 end
