@@ -17,8 +17,9 @@ class Api::JobsController < ApplicationController
   def create
 
     job = Job.new
-    job.name = params[:name]
+    job.description = params[:description]
     job.image_url = params[:image_url]
+    job.material = params[:material]
     job.creator_id = params[:creator_id]
     if job.save
       render json: job
@@ -35,8 +36,9 @@ class Api::JobsController < ApplicationController
 
   def update
     job = Job.find_by(id:params[:id])
-    job.name = params[:name]
+    job.description = params[:description]
     job.image_url = params[:image_url]
+    job.material = params[:material]
     job.bid = params[:bid]
     if job.save
       render json: job

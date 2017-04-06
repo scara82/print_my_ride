@@ -3,7 +3,8 @@
   <script id="job-template" type="text/x-handlebars-template">
     <div class="job" data-id= {{id}} >
       <header class="content">
-        {{name}}
+          {{description}}
+          {{material}}
       </header>
       <div class="image">
         <img src={{image_url}} />
@@ -23,7 +24,8 @@
   <script id="job-template" type="text/x-handlebars-template">
     <div class="job" data-id= {{id}} >
       <header class="content">
-        {{name}}
+          {{description}}
+          {{material}}
       </header>
       <div class="image">
         <img src={{image_url}} />
@@ -43,14 +45,15 @@
   <script id="job-edit-template" type="text/x-handlebars-template">
     <div class="job" data-id= {{id}} >
       <header class="content">
-        {{name}}
+          {{description}}
+          {{material}}
       </header>
       <footer class="content">
         <form class='edit-job-form'>
-          <label>name</label>
-          <input type="text" class="edit-job-name" value="{{name}}">
-          <label>surname</label>
-          <input type="text" class="edit-job-surname" value="{{name}}">
+          <label>description</label>
+          <input type="text" class="edit-job-description" value="{{description}}">
+          <label>material</label>
+          <input type="text" class="edit-job-material" value="{{material}}">
           <label>image url</label>
           <input type="text" class="edit-job-image" value="{{image_url}}">
           <button class="edit-job-button">Edit Job</button>
@@ -61,8 +64,10 @@
 
   <div class="job">
     <form class='new-job-form'>
-      <label>name</label>
-      <input type="text" class="new-job-name">
+      <label>description</label>
+      <input type="text" class="new-job-description">
+      <label>material</label>
+      <input type="text" class="edit-job-material" value="{{material}}">
       <label>image url</label>
       <input type="text" class="new-job-image">
       <button class="new-job-action">Create Job</button>

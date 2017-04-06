@@ -10,8 +10,9 @@ $(document).ready(function() {
       url: '/api/jobs',
       method: 'post',
       data: {
-            name: $('.new-job-name').val(),
+            description: $('.new-job-description').val(),
             image_url: $('.new-job-image').val(),
+            material: $('.new-job-material').val(),
             creator_id: $(session.id)
           }
     }).done(function(job){
@@ -60,8 +61,9 @@ $(document).ready(function() {
           url: '/api/jobs/' + id,
           method: 'put',
           data: {
-            name: $('.edit-job-name').val(),
-            image_url: $('.edit-job-image').val()
+            description: $('.edit-job-description').val(),
+            image_url: $('.edit-job-image').val(),
+            material: $('.edit-job-material').val()
           }
         }).done(function(job) {
           var source = $( '#job-template' ).html();//grab the tenplate string
@@ -93,7 +95,7 @@ $(document).ready(function() {
           var source = $( '#job-template' ).html();//grab the tenplate string
           var template = Handlebars.compile(source); //turns template string into a function
           var html = template( job );
-          $(event.target).closest('.job').remove(); //append to <ul> attached to job 
+          $(event.target).closest('.job').remove(); //append to <ul> attached to job
         });
       });//edit-action
     })
