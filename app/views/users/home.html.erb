@@ -1,17 +1,18 @@
 <div class="wrapper">
 
-
-
   <div class="job">
     <form class='new-job-form'>
-      <label>description</label>
+      <label>Description</label>
+      <br>
       <textarea rows="5" cols="80" class='new-job-description'>
       </textarea>
-      <label>image url</label>
+      <br>
+      <label>Image url</label>
       <input type="text" class="new-job-image">
-      <label>material</label>
+      <label>Desidered material</label>
       <input type="text" name="material">
-      <button class="new-job-action">Create Job</button>
+      <br>
+      <button class="new-job-action">Create New Job</button>
     </form>
   </div>
 
@@ -19,15 +20,16 @@
 
 <script id="job-template" type="text/x-handlebars-template">
   <div class="job" data-id= {{id}} >
+    <h1>My Jobs:</h1>
     <header class="content">
       {{ description }}
     </header>
     <div class="image">
-      <img src="{{ job_img }}" />
+      <img class='job-img' src="{{ job_img }}" />
     </div>
-    <footer class="content">
-      <div><span class="delete-action">Cancel Job</span></div>
-      <div><span class="edit-action">Edit Job</span></div>
+    <footer class="content footer">
+      <div><span class="delete-action item">Cancel Job</span></div>
+      <div><span class="edit-action item">Edit Job</span></div>
     </footer>
     <div>
       <ul>

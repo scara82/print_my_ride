@@ -1,7 +1,14 @@
 class Api::JobsController < ApplicationController
 
   def index
+<<<<<<< HEAD
+  end
+
+  def profile
+    render json: Job.find(paramas[:id])
+=======
     render json: Job.all
+>>>>>>> 830416f6719e24c29adc5cb3810461d9ec7d82ed
   end
 
   def destroy
