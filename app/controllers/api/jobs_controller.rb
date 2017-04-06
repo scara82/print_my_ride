@@ -1,10 +1,6 @@
 
 class Api::JobsController < ApplicationController
 
-  def index
-    render json: Jobs.all
-  end
-
   def profile
     render json: Job.find(paramas[:id])
   end
@@ -23,6 +19,7 @@ class Api::JobsController < ApplicationController
     job = Job.new
     job.name = params[:name]
     job.image_url = params[:image_url]
+    job.creator_id = params[:creator_id]
     if job.save
       render json: job
     else
@@ -49,8 +46,9 @@ class Api::JobsController < ApplicationController
     end
   end
 
-  def accept
-    job = Job.find_by(id: params[:id])
-    job.accept = params[:accept]
-    if job.accept === true 
+  # def creator
+  #   job = Job.find_by(id: params[:id])
+  #   job.bid = params[:accept]
+  #   if job.accept === true
+
 end

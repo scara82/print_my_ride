@@ -10,8 +10,8 @@
       <img src={{image_url}} />
     </div>
     <footer class="content">
-      <div><span class="delete-action">Delete</span></div>
-      <div><span class="edit-action">Edit</span></div>
+      <div><span class="delete-action">Cancel Job</span></div>
+      <div><span class="edit-action">Edit Job</span></div>
     </footer>
     <div>
       <ul>
@@ -41,7 +41,7 @@
   </div>
 </script>
 
-<div class="job">
+ <div class="job">  <!--to be :hidden when creator logged in -->
   <form class='new-job-form'>
     <label>name</label>
     <input type="text" class="new-job-name">
@@ -50,5 +50,30 @@
     <button class="new-job-action">Create Job</button>
   </form>
 </div>
+
+<script id="creator-job-template" type="text/x-handlebars-template">
+  <div class="job" data-id= {{id}} >
+    <header class="content">
+      {{name}}
+    </header>
+    <div class="image">
+      <img src={{image_url}} />
+    </div>
+    <footer class="content">
+      <label>Place a bid</label>
+        <form class='accept-job-form'>
+          <label>Bid</label>
+          <input type="float" class="job-bid">
+          <button class="confirm-job-bid">Confirm Bid</button>
+        </form>
+    </footer>
+    <div>
+      <ul>
+        <!-- insert script for bids -->
+      </ul>
+    </div>
+  </div>
+</script>
+
 
   </div>
