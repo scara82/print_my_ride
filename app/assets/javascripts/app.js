@@ -44,7 +44,7 @@ $(document).ready(function() {
   });//delete-action
 
 
-  $('.wrapper').on('click', '.edit-action', function(event) {
+  $('.wrapper').on('click', '.new-bid-action', function(event) {
     var id = $(event.target).closest('.job').data('id');
     event.preventDefault();
     $.ajax({
@@ -71,7 +71,7 @@ $(document).ready(function() {
         });
       });//edit-action
 
-  $('.wrapper').on('click', '.edit-action', function(event) {
+  $('.wrapper').on('click', function(event) {
     var id = $(event.target).closest('.job').data('id');
     event.preventDefault();
     $.ajax({

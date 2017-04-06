@@ -29,7 +29,6 @@ class Api::JobsController < ApplicationController
   end
 
   def edit
-
     job = Job.find_by(id:params[:id])
       render json: job
   end
@@ -46,9 +45,13 @@ class Api::JobsController < ApplicationController
     end
   end
 
-  # def creator
-  #   job = Job.find_by(id: params[:id])
-  #   job.bid = params[:accept]
-  #   if job.accept === true
+  def creator
+    job = Job.find_by(id: params[:id])
+    job.bid = params[:bid]
+    if job.accept === true
+      job.save
+      render json: job
+    end
+  end
 
 end
