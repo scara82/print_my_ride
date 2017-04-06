@@ -5,7 +5,7 @@
   <div class="job">
     <form class='new-job-form'>
       <label>description</label>
-      <textarea rows="5" cols="80" name='description'>
+      <textarea rows="5" cols="80" class='new-job-description'>
       </textarea>
       <label>image url</label>
       <input type="text" class="new-job-image">
@@ -47,7 +47,7 @@
         <label>name</label>
         <input type="text" class="job-edit-description" value="{{ description }}">
         <label>image url</label>
-        <input type="text" class="job-edit-image_url" value="{{ job_img }}">
+        <input type="text" class="job-edit-job_img" value="{{ job_img }}">
         <label>material</label>
         <input type="text" class="job-edit-material" value="{{ material }}">
         <button class="job-edit-button">Edit Job</button>
@@ -55,3 +55,5 @@
     </footer>
   </div>
 </script>
+
+<input type="hidden" value="<%= session[:user_id] %>" id="session-id">

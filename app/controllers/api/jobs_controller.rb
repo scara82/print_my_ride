@@ -21,17 +21,15 @@ class Api::JobsController < ApplicationController
   end
 
   def create
-
     job = Job.new
     job.description = params[:description]
-    job.image_url = params[:image_url]
+    job.job_img = params[:job_img]
     job.material = params[:material]
-    job.creator_id = params[:creator_id]
+    job.user_id = params[:user_id]
     if job.save
       render json: job
     else
       render json: job.errors
-
     end
   end
 
