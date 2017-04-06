@@ -5,7 +5,6 @@ function cadsIndex() {
 
   $.ajax({ url: apiUrl }).done(renderCadCards);
 
-
   function renderCadCards() {
     console.log('show me what you got');
   }
