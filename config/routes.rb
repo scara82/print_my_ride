@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   delete '/users', to: 'users#destroy'
   get '/users/home', to: 'users#home'
 
-  get '/creators/user_type', to: 'creators#new'
+  get '/creators/user_type', to: 'creators#user_type'
+  get '/creators/new', to: 'creators#new'
   post '/creators', to: 'creators#create'
   get '/creators/home', to: 'creators#home'
 
