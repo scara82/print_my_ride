@@ -2,18 +2,18 @@
 <html>
   <head>
     <title>Print_My_Ride</title>
-    <%= csrf_meta_tags %>
+    <%= csrf_meta_tags %> -->
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js">
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
   </head>
 
   <body>
     <header>
-      <% if buyer_logged_in? %>
-      <div id="navbar">
+      <% if buyer_logged_in? true %>
+      <% if true %>
+        <div id="navbar">
           <nav id="nav-bar">
             <a class="nav_box" href="/"><h1 id='logo'>Print My Ride</h1></a>
             <label>Search</label>
@@ -27,7 +27,7 @@
             <a class="nav_box" href="/#/:id">Profile</a>
           </nav>
         </div>
-      <%end%>
+      <% end %>
 
 
       <%if creator_logged_in? %>
@@ -45,7 +45,7 @@
             <a class="nav_box" href="/#/:id">Profile</a>
           </nav>
         </div>
-        <% end %>
+      <% end %>
 
       <% if user_logged_in? === false %>
         <div id="navbar">
@@ -57,9 +57,10 @@
             <a class="nav_box" href="/#">Log In</a>
           </nav>
         </div>
-      <%end%>
+      <% end %>
     </header>
 
     <%= yield %>
+
   </body>
 </html>
