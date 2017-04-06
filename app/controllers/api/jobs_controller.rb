@@ -37,21 +37,13 @@ class Api::JobsController < ApplicationController
     job = Job.find_by(id:params[:id])
     job.name = params[:name]
     job.image_url = params[:image_url]
+    job.bid = params[:bid]
     if job.save
       render json: job
     else
       render json: job.errors
-
     end
   end
 
-  def creator
-    job = Job.find_by(id: params[:id])
-    job.bid = params[:bid]
-    if job.accept === true
-      job.save
-      render json: job
-    end
-  end
 
 end
