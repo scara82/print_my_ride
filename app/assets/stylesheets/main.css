@@ -1,19 +1,80 @@
-@import url('https://fonts.googleapis.com/css?family=Audiowide|Raleway');
-
 #navbar {
   width: 100%;
   height: inherit;
 }
-
-#nav-bar {
-
+body{
+  font-family: 'Arima Madurai', cursive;
 }
 
-.nav_box {
-
+a{
+  text-decoration: none;
+  color: black;
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 5px;
 }
 
-#logo {
-  font-family: Audiowide, cursive;
-  font-size: 52pt;
+.logo {
+  font-family: 'Special Elite', cursive;
+  font-size: 30pt;
+  margin: 5px;
+}
+
+h1{
+  margin: 5px;
+}
+
+.bar-img{
+  width: 100%;
+  height: 10%;
+}
+
+.home-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+input.item{
+  border-radius: 5px;
+}
+
+.search-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+button{
+  border-radius: 5px;
+  background-color: white;
+  padding: 12px;
+}
+
+a.new-job{
+  text-decoration: none;
+  color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+a.item{
+  text-decoration: none;
+  color: black;
+  margin: 0;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+a.color{
+  background-color:#d9ffb3;
+}
+
+nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }

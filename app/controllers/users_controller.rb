@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     user.name = params[:name]
     user.last_name = params[:last_name]
     user.email = params[:email]
-    user.password_digest = params[:password]
+    user.password = params[:password]
 
     if user.save
       redirect_to '/creators/user_type'

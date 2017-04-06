@@ -6,57 +6,67 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Arima+Madurai|Special+Elite" rel="stylesheet">
   </head>
 
   <body>
-    <header>
-      <div class="logo">
-        <h1>print my ride</h1>
-      </div>
-      <div class="search">
-        <%= form_tag("/cads?search=#{params[:search_term]}", method: :get) do %>
-          <input type="text" name="search_term" placeholder="search">
-          <button>search</button>
-        <% end %>
-      </div>
-      <div class="new-job">
-        <a href="/job/new">create a new job?</a>
-      </div>
+
+    <div class='upper-bar'>
+      <img class='bar-img' src="http://i.imgur.com/7eRinWc.jpg?4" title="source: imgur.com" /></a>
+    </div>
+
+    <div class='home-container'>
+      <h1 class='logo item'>Print My Ride</h1>
       <% if !logged_in? %>
         <%= form_tag('/session/new', method: :get) do %>
-          <div class="sign-in">
-            <label>email</label>
-            <input type="text" name="email">
-            <label>password</label>
-            <input type="password" name="password">
-            <button>log in</button>
+          <div>
+            <label class='item'>email</label>
+            <input class='item' type="text" name="email">
+            <label class='item'>password</label>
+            <input class='item' type="password" name="password">
+            <button class='item'>log in</button>
           </div>
         <% end %>
+        <form>
+          <button class='item' formaction="/users/new">Sign In</button>
+        </form>
       <% end %>
       <% if logged_in? %>
-        <div class="login-status">
+        <div class="login-status item">
           logged in as <%= User.find(session[:user_id]).email %>
+          <a href="/session/destroy">logout</a>
         </div>
-        <a href="/session/destroy">logout</a>
 
         <nav>
-          <a href="#"><div>
+          <a href="#"class='item color'><div>
             dash
           </div></a>
           <% if creator?  %>
-            <a href="#"><div>on-going</div></a>
-            <a href=""><div>designs</div></a>
+            <a href="#" class='item color'><div>on-going</div></a>
+            <a href="" class='item color'><div>designs</div></a>
           <% end %>
-          <a href="#"><div>my projects</div></a>
+          <a href="#" class='item color'><div>my projects</div></a>
         </nav>
       <% end %>
+    </div>
 
+    <div class="search-container">
+      <div class="item">
+        <%= form_tag("/cads?search=#{params[:search_term]}", method: :get) do %>
+          <input class='item' type="text" name="search_term" placeholder="Search">
+          <button>Search</button>
+        <% end %>
+      </div>
+      <div >
+        <a class="new-job item" href="/job/new">I want offer a new job</a>
+      </div>
+    </div>
 
+  </header>
 
-    </header>
-
-    <%= yield %>
+  <%= yield %>
 
   </body>
 </html>
