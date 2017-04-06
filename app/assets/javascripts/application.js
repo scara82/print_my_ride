@@ -17,4 +17,8 @@
 //= require 'underscore'
 //= require 'lodash'
 //= require 'app'
+<<<<<<< HEAD
 //= require 'cads_search'
+=======
+//= require_tree
+>>>>>>> 830416f6719e24c29adc5cb3810461d9ec7d82ed
