@@ -1,11 +1,6 @@
 Rails.application.routes.draw do
   get 'session/new'
   get 'session/destroy'
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 55c134faf22eb13162152cdeb30420901f0c07a2
 
   get '/users/new', to: 'users#new'
   post '/users', to: 'users#create'
@@ -22,8 +17,5 @@ Rails.application.routes.draw do
   end
 
   get '/', to: 'pages#home'
-<<<<<<< HEAD
-=======
-  
->>>>>>> 55c134faf22eb13162152cdeb30420901f0c07a2
+
 end
