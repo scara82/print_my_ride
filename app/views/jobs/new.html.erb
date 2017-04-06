@@ -1,0 +1,17 @@
+<div class='container'>
+
+  <form action="/jobs" method="post">
+
+    <div class="item">
+      <input type="hidden", name='authenticity_token' value="<%= form_authenticity_token %>">
+      <label for="">name</label>
+      <input type="text" name="name">
+    </div>
+
+
+    <div class="item">
+      <button>Create New Job Request</button>
+    </div>
+
+  </form>
+</div>
