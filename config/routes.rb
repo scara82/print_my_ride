@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
+
   get 'session/new', to: 'session#new'
   get 'session/destroy', to: 'session#destroy'
-
-
+  
   get 'session/new'
   get 'session/destroy'
 
