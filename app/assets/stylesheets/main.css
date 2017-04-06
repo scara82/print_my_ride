@@ -2,9 +2,9 @@
   width: 100%;
   height: inherit;
 }
-/*body{
-  background-color: #ccfff5;
-}*/
+body{
+  font-family: 'Arima Madurai', cursive;
+}
 
 a{
   text-decoration: none;
@@ -70,7 +70,7 @@ a.item{
 }
 
 a.color{
-  background-color: #dfff80;
+  background-color:#d9ffb3;
 }
 
 nav{

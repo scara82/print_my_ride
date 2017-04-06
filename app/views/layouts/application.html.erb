@@ -8,6 +8,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Arima+Madurai|Special+Elite" rel="stylesheet">
   </head>
 
   <body>
@@ -28,13 +29,15 @@
             <button class='item'>log in</button>
           </div>
         <% end %>
+        <form>
+          <button class='item' formaction="/users/new">Sign In</button>
+        </form>
       <% end %>
       <% if logged_in? %>
         <div class="login-status item">
           logged in as <%= User.find(session[:user_id]).email %>
           <a href="/session/destroy">logout</a>
         </div>
-
 
         <nav>
           <a href="#"class='item color'><div>
@@ -57,7 +60,7 @@
         <% end %>
       </div>
       <div >
-        <a class="new-job item" href="/job/new">I want create a new job</a>
+        <a class="new-job item" href="/job/new">I want offer a new job</a>
       </div>
     </div>
 

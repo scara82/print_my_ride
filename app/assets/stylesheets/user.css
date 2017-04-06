@@ -2,11 +2,11 @@
   display: flex;
   flex-direction: column;
   width: 25%;
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   border-radius: 5%;
   align-items: center;
   margin: 50px auto;
-  background-color: #ecffb3;
+  background-color: #d9ffb3;
   padding: 20px;
 }
 
