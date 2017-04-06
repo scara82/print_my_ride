@@ -22,6 +22,6 @@ Rails.application.routes.draw do
     resources :cads
   end
 
-  get '/', to: 'pages#home'
+  get '/', to: 'cads#index'
 
 end
