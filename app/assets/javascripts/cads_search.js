@@ -1,14 +1,22 @@
-function cadsIndex() {
+$(document).ready(function() {
 
-  var apiUrl = '/api/cads';
+  // function cadsIndex() {
+  console.log("fg");
+    var apiUrl = '/api/cads';
 
-  $.ajax({
-    url: apiUrl
-  }).done(renderCadCards);
+    $.ajax({
+      url: apiUrl,
+      method: 'get'
+    }).done(function(data) {
+      data.forEach(function(cad) {
+        var cadCardTemplate = Handlebars.compile($('#cad-card-template').html())
+        var html = cadCardTemplate( cad )
+        $('.cad_wrapper').append(html)
+      })
 
-  function renderCadCards(data) {
-    var cadCardTemplate = Handlebars.compile($('#cad-card-template').html())(data)
+    })
 
-  }
+  // };
 
-}
+  // cadsIndex()
+});

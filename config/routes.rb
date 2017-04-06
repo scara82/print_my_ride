@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get '/', to: '/api/cads#index'
-
   get 'session/new', to: 'session#new'
   get 'session/destroy', to: 'session#destroy'
 
