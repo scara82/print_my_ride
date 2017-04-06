@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     resources :cads
   end
 
+
   get '/', to: 'cads#index'
+
 
 end
