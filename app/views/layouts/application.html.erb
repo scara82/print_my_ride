@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Print_My_Ride</title>
-    <%= csrf_meta_tags %> -->
+    <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -36,7 +36,11 @@
       <% end %>
       <% if logged_in? %>
         <div class="login-status">
+<<<<<<< HEAD
           logged in as <%= User.find(session[:user_id]).email %>
+=======
+          logged in as
+>>>>>>> aeed2526a58a9813c31e3f0e6fb1e56d18527883
         </div>
         <a href="/session/destroy">logout</a>
       <% end %>
