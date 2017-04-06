@@ -1,4 +1,5 @@
 <div class="wrapper">
+
   <script id="job-template" type="text/x-handlebars-template">
     <div class="job" data-id= {{id}} >
       <header class="content">
@@ -18,6 +19,27 @@
       </div>
     </div>
   </script>
+
+  <script id="job-template" type="text/x-handlebars-template">
+    <div class="job" data-id= {{id}} >
+      <header class="content">
+        {{name}}
+      </header>
+      <div class="image">
+        <img src={{image_url}} />
+      </div>
+      <footer class="content">
+        <div><span class="delete-action">Cancel Job</span></div>
+        <div><span class="edit-action">Edit Job</span></div>
+      </footer>
+      <div>
+        <ul>
+          <!-- insert script for bids -->
+        </ul>
+      </div>
+    </div>
+  </script>
+
   <script id="job-edit-template" type="text/x-handlebars-template">
     <div class="job" data-id= {{id}} >
       <header class="content">
@@ -36,6 +58,7 @@
       </footer>
     </div>
   </script>
+
   <div class="job">
     <form class='new-job-form'>
       <label>name</label>
@@ -45,4 +68,16 @@
       <button class="new-job-action">Create Job</button>
     </form>
   </div>
+
+
+ <div class="job">  <!--to be :hidden when creator logged in -->
+    <form class='new-job-form'>
+      <label>name</label>
+      <input type="text" class="new-job-name">
+      <label>image url</label>
+      <input type="text" class="new-job-image">
+      <button class="new-job-action">Create Job</button>
+    </form>
+  </div>
+
 </div>
