@@ -1,25 +1,26 @@
 $(document).ready(function() {
 
 
-  // $('.new-job-form').on('submit', function(event){
-  //   event.preventDefault();
-  //   console.log('create new job');
-  //   $.ajax({
-  //     url: '/api/jobs',
-  //     method: 'post',
-  //     data: {
-  //           description: $('.new-job-description').val(),
-  //           image_url: $('.new-job-image').val(),
-  //           material: $('.new-job-material').val(),
-  //           creator_id: $(session.id)
-  //         }
-  //   }).done(function(job){
-  //     var source = $( '#job-template' ).html();//grab the tenplate string
-  //     var template = Handlebars.compile(source); //turns template string into a function
-  //     var html = template( job );
-  //     $('.wrapper').append(html)
-  //   })
-  // });
+  $('.new-job-form').on('submit', function(event){
+    event.preventDefault();
+    console.log('create new job');
+    // debugger
+    $.ajax({
+      url: '/api/jobs',
+      method: 'post',
+      data: {
+            description: $('.new-job-description').val(),
+            job_img: $('.new-job-image').val(),
+            material: $('.new-job-material').val(),
+            user_id: Number($('#session-id').val())
+          }
+    }).done(function(job){
+      var source = $( '#job-template' ).html();//grab the tenplate string
+      var template = Handlebars.compile(source); //turns template string into a function
+      var html = template( job );
+      $('.wrapper').append(html);
+    });
+  });
 
   $.ajax({ //this will be used for both buyers and creators
     url: '/api/jobs',
