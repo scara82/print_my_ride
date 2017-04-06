@@ -34,7 +34,7 @@ class Api::JobsController < ApplicationController
   def edit
 
     job = Job.find_by(id:params[:id])
-      render json: job
+    render json: job
   end
 
   def update
