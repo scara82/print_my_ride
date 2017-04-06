@@ -71,32 +71,32 @@ $(document).ready(function() {
   //       });
   //     });//edit-action
 
-  $('.wrapper').on('click', '.new-bid-action', function(event) {
-    var id = $(event.target).closest('.job').data('id');
-    event.preventDefault();
-    $.ajax({
-      url: 'api/jobs/' + id + '/edit',
-      method: 'get'
-    }).done(function(job){
-      var source = $( '#creator-job-template').html();//grab the tenplate string
-      var template = Handlebars.compile(source); //turns template string into a function
-      var html = template( job );
-      $(event.target).closest('.job').append(html);
-      $('.accept-job-form').on('submit', function(event){
-        $.ajax({
-          url: '/api/bids/' + id,
-          method: 'put',
-          data: {
-            bid: $('.job-bid').val(),
-          }
-        }).done(function(job) {
-          var source = $( '#job-template' ).html();
-          var template = Handlebars.compile(source);
-          var html = template( job );
-          $(event.target).closest('.job').remove();
-        });
-      });
-    })
-  });
+  // $('.wrapper').on('click', '.new-bid-action', function(event) {
+  //   var id = $(event.target).closest('.job').data('id');
+  //   event.preventDefault();
+  //   $.ajax({
+  //     url: 'api/jobs/' + id + '/edit',
+  //     method: 'get'
+  //   }).done(function(job){
+  //     var source = $( '#creator-job-template').html();//grab the tenplate string
+  //     var template = Handlebars.compile(source); //turns template string into a function
+  //     var html = template( job );
+  //     $(event.target).closest('.job').append(html);
+  //     $('.accept-job-form').on('submit', function(event){
+  //       $.ajax({
+  //         url: '/api/bids/' + id,
+  //         method: 'put',
+  //         data: {
+  //           bid: $('.job-bid').val(),
+  //         }
+  //       }).done(function(job) {
+  //         var source = $( '#job-template' ).html();
+  //         var template = Handlebars.compile(source);
+  //         var html = template( job );
+  //         $(event.target).closest('.job').remove();
+  //       });
+  //     });
+  //   })
+  // });
 
 });
