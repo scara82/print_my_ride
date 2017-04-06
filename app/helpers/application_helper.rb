@@ -1,5 +1,7 @@
 module ApplicationHelper
 
+  # @session_id = [session[:user_id]]
+
   def logged_in?
     !!session[:user_id]
   end
