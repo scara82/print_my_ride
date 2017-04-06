@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
   get 'session/new'
-
-  get 'session/create'
-
   get 'session/destroy'
 
   get '/users/new', to: 'users#new'
@@ -18,4 +15,6 @@ Rails.application.routes.draw do
     resources :jobs
     resources :cads
   end
+
+  get '/', to: 'pages#home'
 end
