@@ -1,5 +1,8 @@
 $(document).ready(function() {
 
+
+  // session_id = session.id --to add check against
+
   $('.new-job-form').on('submit', function(event){
     event.preventDefault();
     console.log('create new job');
@@ -19,7 +22,7 @@ $(document).ready(function() {
     })
   });
 
-  $.ajax({
+  $.ajax({ //this will be used for both buyers and creators
     url: '/api/jobs'
   }).done(function(res) {
     res.forEach(function(job){
@@ -65,6 +68,32 @@ $(document).ready(function() {
           var template = Handlebars.compile(source); //turns template string into a function
           var html = template( job );
           $(event.target).closest('.job').remove();
+        });
+      });//edit-action
+
+  $('.wrapper').on('click', '.new-bid-action', function(event) {
+    var id = $(event.target).closest('.job').data('id');
+    event.preventDefault();
+    $.ajax({
+      url: 'api/jobs/' + id + '/edit',
+      method: 'get'
+    }).done(function(job){
+      var source = $( '#creator-job-template').html();//grab the tenplate string
+      var template = Handlebars.compile(source); //turns template string into a function
+      var html = template( job );
+      $(event.target).closest('.job').append(html);
+      $('.accept-job-form').on('submit', function(event){
+        $.ajax({
+          url: '/api/jobs/' + id,
+          method: 'put',
+          data: {
+            bid: $('.job-bid').val(),
+          }
+        }).done(function(job) {
+          var source = $( '#job-template' ).html();//grab the tenplate string
+          var template = Handlebars.compile(source); //turns template string into a function
+          var html = template( job );
+          $(event.target).closest('.job').remove(); //append to <ul> attached to job 
         });
       });//edit-action
     })
