@@ -20,4 +20,7 @@ class CreatorsController < ApplicationController
     end
   end
 
+  def home  
+  end
+
 end
