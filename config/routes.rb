@@ -14,8 +14,6 @@ Rails.application.routes.draw do
   get '/creators/user_type', to: 'creators#new'
   post '/creators', to: 'creators#create'
 
-  root '/pages#home'
-
   resources :cads
 
   namespace :api do
