@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
+  get '/users/new', to: 'users#new'
+  post '/users', to: 'users#create'
+  delete '/users', to: 'users#destroy'
 
-  resources :cad
+  get '/users/user_type', to: 'users#user_type_new'
+  post '/users', to: 'users#creator'
+
+  resources :cads
 
   namespace :api do
     resources :jobs
-    resources :cad
+    resources :cads
   end
-
-
-
 end
