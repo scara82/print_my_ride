@@ -41,16 +41,14 @@
         <a href="/session/destroy">logout</a>
 
         <nav>
-          <% if logged_in? %>
-            <a href="#"><div>
-              dash
-            </div></a>
-            <% if creator? %>
-              <a href="#"><div>on-going</div></a>
-              <a href=""><div>designs</div></a>
-            <% end %>
-            <a href="#"><div></div></a>
+          <a href="#"><div>
+            dash
+          </div></a>
+          <% if creator?  %>
+            <a href="#"><div>on-going</div></a>
+            <a href=""><div>designs</div></a>
           <% end %>
+          <a href="#"><div>my projects</div></a>
         </nav>
       <% end %>
 
