@@ -39,7 +39,21 @@
           logged in as <%= User.find(session[:user_id]).email %>
         </div>
         <a href="/session/destroy">logout</a>
+
+        <nav>
+          <% if logged_in? %>
+            <a href="#"><div>
+              dash
+            </div></a>
+            <% if creator? %>
+              <a href="#"><div>on-going</div></a>
+              <a href=""><div>designs</div></a>
+            <% end %>
+            <a href="#"><div></div></a>
+          <% end %>
+        </nav>
       <% end %>
+
 
 
     </header>
