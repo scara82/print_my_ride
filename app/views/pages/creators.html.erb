@@ -1,13 +1,23 @@
 <div class="wrapper">
 
-<script id="job-template" type="text/x-handlebars-template">
-  <div class="job" data-id= {{id}} >
-    <header class="content">
-      {{name}}
-    </header>
-    <div class="image">
-      <img src={{image_url}} />
+  <script id="job-template" type="text/x-handlebars-template">
+    <div class="job" data-id= {{id}} >
+      <header class="content">
+        {{name}}
+      </header>
+      <div class="image">
+        <img src={{image_url}} />
+      </div>
+      <footer class="content">
+        <button class="new-bid-action">Place a Bid</button>
+      </footer>
+      <div>
+        <ul>
+          <!-- insert script for bids -->
+        </ul>
+      </div>
     </div>
+
     <footer class="content">
       <button class="new-bid-action">Place a Bid</button>
     </footer>
@@ -20,29 +30,29 @@
 </script>
 
 
-<script id="creator-job-template" type="text/x-handlebars-template">
-  <div class="job" data-id= {{id}} >
-    <header class="content">
-      {{name}}
-    </header>
-    <div class="image">
-      <img src={{image_url}} />
+  <script id="creator-job-template" type="text/x-handlebars-template">
+    <div class="job" data-id= {{id}} >
+      <header class="content">
+        {{name}}
+      </header>
+      <div class="image">
+        <img src={{image_url}} />
+      </div>
+      <footer class="content">
+        <label>Place a bid</label>
+          <form class='accept-job-form'>
+            <label>Bid</label>
+            <input type="float" class="job-bid">
+            <button class="confirm-job-bid">Confirm Bid</button>
+          </form>
+      </footer>
+      <div>
+        <ul>
+          <!-- insert script for bids -->
+        </ul>
+      </div>
     </div>
-    <footer class="content">
-      <label>Place a bid</label>
-        <form class='accept-job-form'>
-          <label>Bid</label>
-          <input type="float" class="job-bid">
-          <button class="confirm-job-bid">Confirm Bid</button>
-        </form>
-    </footer>
-    <div>
-      <ul>
-        <!-- insert script for bids -->
-      </ul>
-    </div>
-  </div>
-</script>
+  </script>
 
 
-  </div>
+</div>
