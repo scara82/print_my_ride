@@ -17,3 +17,4 @@
 //= require 'underscore'
 //= require 'lodash'
 //= require 'app'
+//= require_tree
