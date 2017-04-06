@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     user.password_digest = params[:password_digest]
 
     if user.save
-      render :user_type
+      redirect_to '/creators/user_type'
     else
       render :new
     end

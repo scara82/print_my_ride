@@ -36,11 +36,7 @@
       <% end %>
       <% if logged_in? %>
         <div class="login-status">
-<<<<<<< HEAD
           logged in as <%= User.find(session[:user_id]).email %>
-=======
-          logged in as
->>>>>>> aeed2526a58a9813c31e3f0e6fb1e56d18527883
         </div>
         <a href="/session/destroy">logout</a>
       <% end %>

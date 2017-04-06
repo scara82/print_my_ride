@@ -1,6 +1,7 @@
 class CreatorsController < ApplicationController
 
   def new
+    render :user_type_new
   end
 
   def create
