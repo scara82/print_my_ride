@@ -30,6 +30,6 @@ Project.create( owner_id: User.last.id, description: "create me a mikki mouse he
 
 Cad.create( designer_id: Creator.first.id, description: 'mikki mouse head', material_id: Material.last.id, image_url: "https://www.tinkercad.com/things/3vh8qovQ6on/t725.png?t=56941a62" )
 
-Job.create( project_id: Project.first.id, cad_id: Cad.first.id, accepted: false, completed: false )
+Job.create( project_id: Project.first.id, cad_id: Cad.first.id, accepted: false, completed: false, printer_id: Creator.first.id, user_id: User.first.id, description: 'I need this job done for the end of May 2017. Make an offert!', job_img: 'http://www.panozzosrl.com/images/catalogo/images-big/VTC85_viti_testa_cilindrica_din85.jpg', material: 'plastic' )
 
 Bid.create( creator_id: Creator.first.user_id, job_id: Job.first.id, design: true, print: true, price: 49.99 )
