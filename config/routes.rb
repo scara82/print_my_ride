@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   post '/creators', to: 'creators#create'
   get '/creators/home', to: 'creators#home'
 
+  get '/jobs/new', to: 'jobs#new'
+  post '/jobs', to: 'jobs#create'
+
   resources :cads
 
   namespace :api do

@@ -12,7 +12,7 @@ class JobsController < ApplicationController
     job.completed = params[:completed]
 
     if job.save
-      render :new
+      redirect_to '/'
     else
       render :create
     end

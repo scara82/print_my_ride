@@ -88,7 +88,7 @@ $(document).ready(function() {
   //     $('.accept-job-form').on('submit', function(event){
   //       $.ajax({
   //         url: '/api/bids/' + id,
-  //         method: 'put',
+  //         method: 'post',
   //         data: {
   //           bid: $('.job-bid').val(),
   //         }
@@ -96,7 +96,7 @@ $(document).ready(function() {
   //         var source = $( '#job-template' ).html();
   //         var template = Handlebars.compile(source);
   //         var html = template( job );
-  //         $(event.target).closest('.job').remove();
+  //         $(event.target).closest('.job').append();
   //       });
   //     });
   //   })
