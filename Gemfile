@@ -48,6 +48,8 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pry-rails'
+  # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+  # Use sqlite3 as the database for Active Record
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
