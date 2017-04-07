@@ -16,55 +16,55 @@
     <div class='upper-bar'>
       <img class='bar-img' src="http://i.imgur.com/7eRinWc.jpg?4" title="source: imgur.com" /></a>
     </div>
+      <div class='bar'>
+        <div class='home-container'>
+          <h1 class='logo item'>Print My Ride</h1>
+          <% if !logged_in? %>
+            <%= form_tag('/session/new', method: :get) do %>
+              <div>
+                <label class='item'>email</label>
+                <input class='item' type="text" name="email">
+                <label class='item'>password</label>
+                <input class='item' type="password" name="password">
+                <button class='item'>log in</button>
+              </div>
+            <% end %>
+            <form>
+              <button class='item' formaction="/users/new">Sign In</button>
+            </form>
+          <% end %>
+          <% if logged_in? %>
+            <div class="login-status item">
+              logged in as <%= User.find(session[:user_id]).email %>
+              <a href="/session/destroy">logout</a>
+            </div>
 
-    <div class='home-container'>
-      <h1 class='logo item'>Print My Ride</h1>
-      <% if !logged_in? %>
-        <%= form_tag('/session/new', method: :get) do %>
-          <div>
-            <label class='item'>email</label>
-            <input class='item' type="text" name="email">
-            <label class='item'>password</label>
-            <input class='item' type="password" name="password">
-            <button class='item'>log in</button>
-          </div>
-        <% end %>
-        <form>
-          <button class='item' formaction="/users/new">Sign In</button>
-        </form>
-      <% end %>
-      <% if logged_in? %>
-        <div class="login-status item">
-          logged in as <%= User.find(session[:user_id]).email %>
-          <a href="/session/destroy">logout</a>
+            <nav>
+              <a href="#"class='item color'><div>
+                dash
+              </div></a>
+              <% if creator?  %>
+                <a href="#" class='item color'><div>on-going</div></a>
+                <a href="" class='item color'><div>designs</div></a>
+              <% end %>
+              <a href="#" class='item color'><div>my projects</div></a>
+            </nav>
+          <% end %>
         </div>
 
-        <nav>
-          <a href="#"class='item color'><div>
-            dash
-          </div></a>
-          <% if creator?  %>
-            <a href="#" class='item color'><div>on-going</div></a>
-            <a href="" class='item color'><div>designs</div></a>
-          <% end %>
-          <a href="#" class='item color'><div>my projects</div></a>
-        </nav>
-      <% end %>
-    </div>
-
-    <div class="search-container">
-      <div class="item">
-        <%= form_tag("/cads?search=#{params[:search_term]}", method: :get) do %>
-          <input class='item' type="text" name="search_term" placeholder="Search">
-          <button>Search</button>
-        <% end %>
+        <div class="search-container">
+          <div class="item">
+            <%= form_tag("/cads?search=#{params[:search_term]}", method: :get) do %>
+              <input class='item' type="text" name="search_term" placeholder="Search">
+              <button>Search</button>
+            <% end %>
+          </div>
+          <form>
+            <button class='item' formaction="/">I want offer a new job</button>
+          </form>
+        </div>
       </div>
-      <form>
-        <button class='item' formaction="/">I want offer a new job</button>
-      </form>
-    </div>
-
-  </header>
+  <!-- </header> -->
 
   <%= yield %>
 
