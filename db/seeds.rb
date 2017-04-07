@@ -29,10 +29,15 @@ CreatorMaterial.create( user_id: Creator.first.user_id, material_id: Material.fi
 Project.create( owner_id: User.last.id, description: "create me a mikki mouse head outa titatnium" )
 
 Cad.create( designer_id: Creator.first.id, description: 'mikki mouse head', material_id: Material.last.id, image_url: "https://www.tinkercad.com/things/3vh8qovQ6on/t725.png?t=56941a62" )
+Cad.create( designer_id: Creator.first.id, description: 'bike tyre pry bar', material_id: Material.last.id, image_url: "https://ae01.alicdn.com/kf/HTB1eYQJJpXXXXasXXXXq6xXFXXXU/3PCS-Lot-Engineering-Plastics-Steel-Elbow-font-b-Tire-b-font-Repair-Tools-font-b-Tire.jpg" )
+Cad.create( designer_id: Creator.first.id, description: 'make some custom chop sticks', material_id: Material.last.id, image_url: "https://s-media-cache-ak0.pinimg.com/originals/37/32/47/37324791609d2b73eab2ae09c778c1d7.jpg" )
+Cad.create( designer_id: Creator.first.id, description: 'great head for your vacuum cleaner', material_id: Material.last.id, image_url: "https://i1.wp.com/www.vacuumsguide.com/wp-content/uploads/2014/09/claw-utility-nozzle.png" )
+
+
 
 Job.create( project_id: Project.first.id, cad_id: Cad.first.id, accepted: false, completed: false, printer_id: Creator.first.id, user_id: User.first.id, description: 'I need this job done for the end of May 2017. Make an offert!', job_img: 'http://www.panozzosrl.com/images/catalogo/images-big/VTC85_viti_testa_cilindrica_din85.jpg', material: 'plastic' )
 Job.create( project_id: Project.first.id, cad_id: Cad.first.id, accepted: false, completed: false, printer_id: Creator.first.id, user_id: User.first.id, description: 'I want something that looks like food but is not actually edible', job_img: 'http://imgs.inkfrog.com/pix/kabicy/22000282-3.JPG', material: 'plastic' )
-Job.create( project_id: Project.first.id, cad_id: Cad.first.id, accepted: false, completed: false, printer_id: Creator.first.id, user_id: User.first.id, description: "I am very small, i need new furniture - please print me a house worth of furniture at 1/100th scale", job_img: 'http://www.panozzosrl.com/images/catalogo/images-big/VTC85_viti_testa_cilindrica_din85.jpg', material: 'plastic' )
-Job.create( project_id: Project.first.id, cad_id: Cad.first.id, accepted: false, completed: false, printer_id: Creator.first.id, user_id: User.first.id, description: 'I need this job done for the end of May 2017. Make an offert!', job_img: 'http://www.panozzosrl.com/images/catalogo/images-big/VTC85_viti_testa_cilindrica_din85.jpg', material: 'plastic' )
+Job.create( project_id: Project.first.id, cad_id: Cad.first.id, accepted: false, completed: false, printer_id: Creator.first.id, user_id: User.first.id, description: "I am very small, i need new furniture - please print me a house worth of furniture at 1/100th scale", job_img: 'https://s-media-cache-ak0.pinimg.com/736x/57/fd/5f/57fd5f96a7f93535db427f47c9d3fba0.jpg', material: 'mixed' )
+Job.create( project_id: Project.first.id, cad_id: Cad.first.id, accepted: false, completed: false, printer_id: Creator.first.id, user_id: User.first.id, description: 'looking to fix my car - need this special bmw tool - can someone make it for me', job_img: 'http://www.samstagsales.com/bmw/bmw118570.jpg', material: 'plastic' )
 
 Bid.create( creator_id: Creator.first.user_id, job_id: Job.first.id, design: true, print: true, price: 49.99 )
