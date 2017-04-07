@@ -1,9 +1,9 @@
 $(document).ready(function() {
 
   // function cadsIndex() {
-  console.log("fg");
-    var apiUrl = '/api/cads';
+  var apiUrl = '/api/cads';
 
+  if (!!$('#cad-card-template').get(0)) {
     $.ajax({
       url: apiUrl,
       method: 'get'
@@ -13,10 +13,7 @@ $(document).ready(function() {
         var html = cadCardTemplate( cad )
         $('.cad_wrapper').append(html)
       })
-
     })
+  }
 
-  // };
-
-  // cadsIndex()
 });
