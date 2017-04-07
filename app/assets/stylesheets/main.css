@@ -22,7 +22,7 @@ a{
   margin: 5px;
 }
 
-h1{
+h1, h2{
   margin: 5px;
   /*color: white;*/
 }
@@ -74,8 +74,8 @@ a.item{
 }
 
 a.color{
-  background-color: #d9ffb3;
-  /*background-color: rgba(210,255,82,1);*/
+  /*background-color: #d9ffb3;*/
+  background-color: rgba(210,255,82,1);
 }
 
 nav{
