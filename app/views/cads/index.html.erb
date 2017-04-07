@@ -2,7 +2,7 @@
 <script id="cad-card-template" type="text/x-handlebars-template">
   <div class="card" data-id="{{ id }}">
     <header class="content">
-      <div>{{ description }}</div>
+      <div>{{ description }} <button type='submit' formaction= "/cads/{{id}}" class="content">Buy It Now</button></div>
     </header>
     <div class="image">
       <img class='cad_img' src="{{ image_url }}">

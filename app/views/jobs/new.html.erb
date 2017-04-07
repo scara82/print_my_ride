@@ -1,20 +1,22 @@
 <div class='container'>
 
   <form action="/jobs" method="post">
-
+    <h2>Create a new job request</h2>
     <div class="item">
       <input type="hidden", name='authenticity_token' value="<%= form_authenticity_token %>">
-      <label for="">description</label>
-      <input type="text" name="name">
-      <label for="">image</label>
-      <input type="text" name="job_img">
-      <label>material</label>
-      <input type="text" name="material">
+      <label for="">Description</label>
+      <input class='input-style' type="text" name="description">
+      <br>
+      <label for="">Image</label>
+      <input class='input-style' type="text" name="job_img">
+      <br>
+      <label>Material</label>
+      <input class='input-style' type="text" name="material">
     </div>
 
 
     <div class="item">
-      <button>Create New Job Request</button>
+      <button>Create</button>
     </div>
 
   </form>
