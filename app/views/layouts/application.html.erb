@@ -40,10 +40,15 @@
             </div>
 
             <nav>
-              <a href="#"class='item color'><div>
-                dash
-              </div></a>
+              <% if !creator? %>
+                <a href="/users/home"class='item color'><div>
+                  dash
+                </div></a>
+              <% end %>
               <% if creator?  %>
+                <a href="/creators/home"class='item color'><div>
+                  dash
+                </div></a>
                 <a href="#" class='item color'><div>on-going</div></a>
                 <a href="" class='item color'><div>designs</div></a>
               <% end %>
@@ -68,5 +73,11 @@
 
   <%= yield %>
 
+
+  <footer>
+    <a href="//about">About this site</a>
+    <input type="hidden" class="session-id" value="<%= session[:user_id] %>">
+    <input type="hidden" class="creator" value="<%= creator? %>">
+  </footer>
   </body>
 </html>

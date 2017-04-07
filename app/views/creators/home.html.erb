@@ -1,15 +1,17 @@
 <div class="wrapper">
 
   <script id="job-template" type="text/x-handlebars-template">
-    <div class="job" data-id= {{id}} >
+    <div class="job" data-id="{{ id }}" >
       <header class="content">
-        {{name}}
+          {{ description }}
+          {{ material }}
       </header>
       <div class="image">
-        <img src={{image_url}} />
+        <img src="{{ image_url }}" />
       </div>
       <footer class="content">
-        <button class="new-bid-action">Place a Bid</button>
+        <div><span class="delete-action">Cancel Job</span></div>
+        <div><span class="edit-action">Edit job</span></div>
       </footer>
       <div>
         <ul>

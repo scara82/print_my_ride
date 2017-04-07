@@ -21,18 +21,17 @@ $(document).ready(function() {
     });
   });
 
-  // $.ajax({ //this will be used for both buyers and creators
-  //   url: '/api/jobs',
-  //   method: 'get'
-  // }).done(function(res) {
-  //   res.forEach(function(job){
-  //     var source = $( '#job-template' ).html();
-  //     debugger
-  //     var template = Handlebars.compile(source);
-  //     var html = template( job );
-  //     $('.wrapper').append(html);
-  //   });
-  // });
+  $.ajax({ //this will be used for both buyers and creators
+    url: '/api/jobs',
+    method: 'get'
+  }).done(function(res) {
+    res.forEach(function(job){
+      var source = $( '#job-template' ).html();
+      var template = Handlebars.compile(source);
+      var html = template( job );
+      $('.wrapper').append(html);
+    });
+  });
 
   $('.wrapper').on('click', '.delete-action', function(event) {
     var id = $(event.target).closest('.job').data('id');
