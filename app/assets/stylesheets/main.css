@@ -3,6 +3,9 @@
   padding: 5px;
   background: rgba(210,255,82,1);
 }*/
+*{
+  font-family: 'Arima Madurai', cursive;
+}
 
 body{
   font-family: 'Arima Madurai', cursive;
@@ -74,7 +77,6 @@ a.item{
 }
 
 a.color{
-  /*background-color: #d9ffb3;*/
   background-color: rgba(210,255,82,1);
 }
 

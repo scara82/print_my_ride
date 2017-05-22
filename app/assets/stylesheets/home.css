@@ -28,3 +28,14 @@
   flex-direction: row;
   justify-content:flex-end;
 }
+
+.search-container{
+  background-color: rgba(210,255,82,1);
+  margin-top: 1%;
+  height: 90px;
+  border: 1px solid black;
+}
+
+a.logout{
+  margin-top: 5px;;
+}

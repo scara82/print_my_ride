@@ -14,7 +14,7 @@
   <body>
 
     <div class='upper-bar'>
-      <img class='bar-img' src="http://i.imgur.com/7eRinWc.jpg?4" title="source: imgur.com" /></a>
+      <img class='bar-img' src="http://i.imgur.com/7eRinWc.jpg?4" title="source: imgur.com"/>
     </div>
       <div class='bar'>
         <div class='home-container'>
@@ -30,13 +30,15 @@
               </div>
             <% end %>
             <form>
-              <button class='item' formaction="/users/new">Sign In</button>
+              <a class='item color' href="/users/new">Sign In</a>
+              <a class='item color' href="//about">About this site</a>
             </form>
           <% end %>
           <% if logged_in? %>
-            <div class="login-status item">
+            <div class="color item">
               logged in as <%= User.find(session[:user_id]).email %>
-              <a href="/session/destroy">logout</a>
+
+              <a class='color logout' href="/session/destroy">logout</a>
             </div>
 
             <nav>
@@ -68,6 +70,7 @@
             <button class='item' formaction="/jobs/new">I want offer a new job</button>
           </form>
         </div>
+
       </div>
   <!-- </header> -->
 
@@ -75,7 +78,6 @@
 
 
   <footer>
-    <a href="//about">About this site</a>
     <input type="hidden" class="session-id" value="<%= session[:user_id] %>">
     <input type="hidden" class="creator" value="<%= creator? %>">
   </footer>

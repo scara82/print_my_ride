@@ -28,7 +28,7 @@ CreatorMaterial.create( user_id: Creator.first.user_id, material_id: Material.fi
 
 Project.create( owner_id: User.last.id, description: "create me a mikki mouse head outa titatnium" )
 
-Cad.create( designer_id: Creator.first.id, description: 'mikki mouse head', material_id: Material.last.id, image_url: "https://www.tinkercad.com/things/3vh8qovQ6on/t725.png?t=56941a62" )
+Cad.create( designer_id: Creator.first.id, description: 'mikki mouse', material_id: Material.last.id, image_url: "http://i.imgur.com/gGCN2b5.png")
 Cad.create( designer_id: Creator.first.id, description: 'bike tyre pry bar', material_id: Material.last.id, image_url: "https://ae01.alicdn.com/kf/HTB1eYQJJpXXXXasXXXXq6xXFXXXU/3PCS-Lot-Engineering-Plastics-Steel-Elbow-font-b-Tire-b-font-Repair-Tools-font-b-Tire.jpg" )
 Cad.create( designer_id: Creator.first.id, description: 'make some custom chop sticks', material_id: Material.last.id, image_url: "https://s-media-cache-ak0.pinimg.com/originals/37/32/47/37324791609d2b73eab2ae09c778c1d7.jpg" )
 Cad.create( designer_id: Creator.first.id, description: 'great head for your vacuum cleaner', material_id: Material.last.id, image_url: "https://i1.wp.com/www.vacuumsguide.com/wp-content/uploads/2014/09/claw-utility-nozzle.png" )
